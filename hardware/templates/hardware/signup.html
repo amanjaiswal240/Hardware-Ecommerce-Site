@@ -1,0 +1,73 @@
+{% extends 'hardware/base.html' %}
+
+{% block title %} Create Account {% endblock title %}
+
+{% block css %}
+<style type="text/css">
+    form .btn {
+        background-color: blueviolet;
+        font-weight: bold;
+        color: white;
+    }
+
+    .form-heading{
+        color: blueviolet;
+    }
+</style>
+{% endblock css %}
+
+{% block content %}
+{% load static %}
+<div class="container mt-3">
+    <div class="row">
+        <!-- <div class="col-sm-4"></div> -->
+        <div class="col-12 pl-0 pr-0">
+            <div class="tab-content mt-3 pl-3 pr-3">
+                <h1 class="form-heading text-center"> Sign Up </h1>
+                <form method="post" action="/hardware/signup/">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                            placeholder="Enter Name" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                            placeholder="Enter email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Password</label>
+                        <input type="password" class="form-control" id="pass1" placeholder="Password"
+                            name="password" required>
+                    </div>
+                    <a href="/hardware/" class="btn cart-btn text-white">Back</a>
+                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- <div class="col-sm-4"></div> -->
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script>
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        updateCart(cart);
+    }
+
+    function updateCart(cart) {
+        var sum = 0;
+        for (item in cart) {
+            let qty = cart[item][0];
+            sum = sum + qty;
+        }
+        document.getElementById('cart').innerHTML = sum;
+    }
+
+</script>
+{% endblock js %}
