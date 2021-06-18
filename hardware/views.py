@@ -136,4 +136,4 @@ def categoryClick(request,ctgry):
     query=ctgry.lower()
     products=Product.objects.all()
     prod=[item for item in products if searchCategory(query, item)]
-    return render(request, 'hardware/search.html', {'product':prod})
+    return render(request, 'hardware/category.html', {'product':prod})
