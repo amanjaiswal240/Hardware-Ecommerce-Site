@@ -66,6 +66,14 @@
         </nav>
     </header>
 
+    <div class="aligner-item mobile_search_box">
+        <form action="/hardware/search/" method="get">
+            <input type="text" class="search_input" placeholder="   Search the products here" name="search" ,
+                id="search">
+            <input type="submit" class="search-btn" value="Search">
+        </form>
+    </div>
+
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         <strong>Message : </strong> {{ message }}

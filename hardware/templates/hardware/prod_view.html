@@ -7,9 +7,9 @@
     <div class="row">
         <div class="col-md-4">
             <div class="row">
-                <img src="/media/{{product.image}}" width="233px" height="385px">
+                <img src="/media/{{product.image}}" width="233px" height="385px" class="pro-img">
             </div>
-            <div class="row">
+            <div class="row desktop-btns">
                 <a href="/hardware/checkout/"><button class="btn btn-primary mx-2 cart-btn"> Buy Now</button></a>
                 <span id="divpr{{product.id}}" class="divpr">
                     <button id="pr{{ product.id }}" class="btn mx-2 cart-btn cart"> Add To Cart</button>
@@ -20,6 +20,12 @@
             <h5 id="namepr{{product.id}}">{{product.product_name}}</h5>
             <p><b> Rs. <span id="pricepr{{product.id}}">{{ product.price }}</span></b></p>
             <p>{{product.description}}</p>
+        </div>
+        <div class="mobile-btns">
+            <a href="/hardware/checkout/"><button class="btn btn-primary mx-2 cart-btn"> Buy Now</button></a>
+            <span id="divpr{{product.id}}" class="divpr">
+                <button id="pr{{ product.id }}" class="btn mx-2 cart-btn cart"> Add To Cart</button>
+            </span>
         </div>
     </div>
 </div>

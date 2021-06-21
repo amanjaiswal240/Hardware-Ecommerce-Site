@@ -12,8 +12,7 @@ body{
 header{
     width: 100%;
     height: 56px;
-    background-color: blueviolet;
-    
+    background-color: blueviolet;  
 }
 
 
@@ -25,6 +24,10 @@ nav{
     height: 100%;
     padding: 10px 0;
     justify-content: space-around;
+}
+
+.mobile_search_box{
+    display:none;
 }
 
 .search_input{
@@ -117,6 +120,10 @@ nav{
     height: 35px;
 }
 
+.mobile-btns{
+    display: none;
+}
+
 .alert{
     margin-bottom: 0px;
 }
@@ -145,3 +152,96 @@ footer a{
     text-shadow: 1px 1px black;
 }
 /* style="background-image: url({% static 'hardware/images/front-end.jpg' %})" */
+
+@media only screen and (max-width: 994px) {
+    .search_input{
+        width: 380px;
+    }
+
+    .category-row{
+        height: 100px;
+    }
+
+    .category-row .category img{
+        height: 80px;
+    }
+    
+    .category-row .category h6{
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 768px){
+    .container {
+        max-width: 800px;
+    }
+}
+
+
+@media only screen and (max-width: 550px) {
+    .search_input{
+        width: 320px;
+    }
+
+    .search_box{
+        display: none;
+    }
+
+    /* .mobile-search-div{
+        width:100%;
+        height: 56px;
+        background-color: blueviolet;
+    } */
+
+    .mobile_search_box{
+        display: block;
+        width:100%;
+        height: 56px;
+        background-color: blueviolet;
+    }
+
+    .mobile_search_box form{
+        margin: auto;
+        padding: 10px;
+        padding-left: 35px;
+    }
+
+    .category-row{
+        padding-top: 2px;
+        height: 60px;
+        justify-content: space-between;
+    }
+
+    .category-row .category img{
+        height: 50px;
+    }
+    
+    .category-row .category h6{
+        display: none;
+    }
+
+    .center-element .store-name{
+        font-size: 40px;
+    }
+    
+    .center-element .store-add{
+        font-size: 14px;
+    }
+
+    .pro-img{
+        padding: 15px;
+        width: 100%;
+    }
+
+    .desktop-btns{
+        display: none;
+    }
+
+    .mobile-btns{
+        display: block;
+    }
+    
+}
+
